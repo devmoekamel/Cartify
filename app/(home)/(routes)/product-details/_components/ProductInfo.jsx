@@ -1,5 +1,5 @@
 "use client";
-import { addtocart } from "@/app/store/cartSlice";
+import { addtocart } from "../../../../store/cartSlice";
 import { List, ShoppingBag } from "lucide-react";
 import React from "react";
 import { useDispatch } from "react-redux";

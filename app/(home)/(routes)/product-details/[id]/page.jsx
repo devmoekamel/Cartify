@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchProductbyId,
   fetchProductsbyCategory,
-} from "@/app/store/ProductSlice";
+} from "../../../../store/ProductSlice.js";
 import ProductList from "../../_components/ProductList";
 
 const ProductDetails = ({ params }) => {
