@@ -1,11 +1,15 @@
 "use client";
-import { removeCartitem } from "@/app/store/cartSlice";
+import { removeCartitem } from "../../../store/cartSlice.js";
+import Link from "next/link";
+import { useRouter } from "next/navigation.js";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartList);
   const dispatch = useDispatch();
+  const router = useRouter();
+
   const countSubTotal = () => {
     let total = 0;
     cartItems.map((item) => (total += item.price));
@@ -145,12 +149,14 @@ const Cart = () => {
                 </div>
 
                 <div className="flex justify-end">
-                  <a
-                    href="#"
-                    className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+                  <button
+                    onClick={() =>
+                      router.push(`/checkout?amount=${countTotal()}`)
+                    }
+                    className="block px-5 py-3 text-sm text-white transition bg-violet-700 rounded hover:bg-violet-600"
                   >
                     Checkout
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

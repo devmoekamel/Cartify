@@ -1,5 +1,5 @@
 "use client";
-import { addtocart } from "@/app/store/cartSlice";
+import { addtocart } from "../../../store/cartSlice.js";
 import { List, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
